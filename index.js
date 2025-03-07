@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "https://gregarious-starlight-9ad7c0.netlify.app/", credentials: true }));
 
 DB();
 app.use(userAuthRouter)

@@ -5,6 +5,7 @@ import { Color } from "../colorModal.js";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
+import {isAuthenticated} from "./authorization.js"
 
 
 
@@ -137,9 +138,9 @@ router.post("/saveColor", async (req, res) => {
     }catch(error){
         res.status(500).send(error.message);
     }
-})
+});
 
-router.get("/colors",  async (req, res) => {
+router.get("/colors", async (req, res) => {
     try{
         const count = await Color.countDocuments();
         if(count === 0){
